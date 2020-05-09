@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- <a v-bind:href="url" v-text='name'></a> -->
+        <a :href="url" v-text='name'></a>
+        <!-- 简写 -->
+        <button @click='handle'>切换</button>
+    </div>
+    <script src="../vue.js"></script>
+    <script>
+        let vm=new Vue({
+            el:'#app',
+            data:{
+                name:'百度',
+                url:'http://www.baidu.com'
+            },
+            methods: {
+                handle(){
+                    this.url='http://www.taobao.com',
+                    this.name='淘宝'
+                }
+            }
+        });
+    </script>
+</body>
+</html>

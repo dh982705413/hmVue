@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .active {
+            border: 1px solid red;
+            width: 100px;
+            height: 100px;
+        }
+
+        .error {
+            background-color: orange;
+        }
+
+        .test {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+
+
+        <div :style="{border:borderStyle,width:widhStyle,height:heightStyle}">测试样式</div>
+        <div :style="objStyle">111</div>
+        <button @click='handle'>修改</button>
+    </div>
+    <script src="../vue.js"></script>
+    <script>
+        let bm = new Vue({
+            el: '#app',
+            data: {
+                borderStyle: '1px solid red',
+                widhStyle: '100px',
+                heightStyle: '200px',
+                objStyle: {
+                    border: '1px solid red',
+                    width: '100px',
+                    height: '200px'
+                }
+            },
+            methods: {
+                handle() {
+                    this.heightStyle = '100px';
+                    this.objStyle.width='200px'
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
