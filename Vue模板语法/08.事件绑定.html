@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        [v-cloak]{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div>{{num}} </div> 
+        <input type="button" v-on:click='num++' value="加">
+        <input type="button" @click='num--' value="减">
+        <input type="button" @click='show' value="弹出">
+    </div>
+    <script src="../vue.js"></script>
+    <script>
+        let vm=new Vue({
+            el:'#app',
+            data:{
+                num:1,
+                array:[1,23,4,5,8,6]
+            },
+            methods: {
+                show(){
+                    alert('1');
+                }
+            }
+        });
+    </script>
+</body>
+</html>

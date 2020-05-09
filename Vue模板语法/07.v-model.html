@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        [v-cloak]{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div >{{msg}} </div> 
+        <div>
+            <input type="text" v-model='msg'>
+        </div>
+    </div>
+    <script src="../vue.js"></script>
+    <script>
+        let vm=new Vue({
+            el:'#app',
+            data:{
+                msg:'hello Vue',
+                array:[1,23,4,5,8,6]
+            }
+        });
+    </script>
+</body>
+</html>
