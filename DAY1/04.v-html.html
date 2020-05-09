@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        [v-cloak]{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div v-html='show'></div>
+        <!-- 不推荐使用，可能发生跨站攻击 -->
+    </div>
+    <script src="../vue.js"></script>
+    <script>
+        let vm=new Vue({
+            el:'#app',
+            data:{
+                msg:'hello Vue',
+                array:[1,23,4,5,8,6],
+                show:'<h1>html</h1>'
+            }
+        });
+    </script>
+</body>
+</html>
