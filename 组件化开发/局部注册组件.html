@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <hello-world></hello-world>
+    <hello-dh></hello-dh>
+    <hellow-yz></hellow-yz>
+</div>
+<script src="../vue.js"></script>
+
+<script>
+    let helloWorld = {
+        data() {
+            return {
+                msg: 'helloworld'
+            }
+        },
+        template: `
+            <div>{{msg}}</div>`
+    };
+    let helloDh = {
+        data() {
+            return {
+                msg: 'helloDh'
+            }
+        },
+        template: `
+            <div>{{msg}}</div>`
+    };
+    let helloYz = {
+        data() {
+            return {
+                msg: 'helloYz'
+            }
+        },
+        template: `
+            <div>{{msg}}</div>`
+    }
+    let vm = new Vue({
+        el: '#app',
+        data: {},
+        components: {
+            'hello-world': helloWorld,
+            'hello-dh': helloDh,
+            'hellow-yz': helloYz
+        }
+    })
+</script>
+</body>
+</html>

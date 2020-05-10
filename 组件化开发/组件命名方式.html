@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <hello-world></hello-world>
+    <button-dh></button-dh>
+</div>
+<script src="../vue.js"></script>
+<script>
+
+    /*
+    *组件注册注意事项
+    * 如果使用驼峰命名组件，那么只能在字符串模板中使用驼峰的方式命名使用组件
+    *
+    * */
+    Vue.component('HelloWorld', {
+        data() {
+            return {
+                msg: 'HelloWorld'
+            }
+        },
+        template: `
+            <div>{{msg}}</div>`
+    });
+    Vue.component('button-dh', {
+        data() {
+            return {
+                msg: 'ss'
+            }
+        },
+        template: `
+            <div>
+                {{msg}}
+                <HelloWorld></HelloWorld>
+            </div>`
+    });
+    let vm = new Vue({
+        el: '#app',
+        data: {}
+    })
+</script>
+</body>
+</html>
