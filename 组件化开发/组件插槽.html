@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <alert-box></alert-box>
+    <alert-box>youbug</alert-box>
+</div>
+<script src="../vue.js"></script>
+<script>
+    Vue.component('alert-box',{
+        template:`
+        <div>
+            <strong>ERROR:</strong>
+            <slot>default</slot>
+
+        </div>
+        `
+    });
+    let vm=new Vue({
+        el:'#app',
+        data:{
+            msg:'bug'
+        }
+    });
+</script>
+</body>
+</html>

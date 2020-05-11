@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .current{
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <dh-layout :list="list">
+        <template slot-scope="slotProps">
+            <strong class="current" v-if="slotProps.info.id==1">{{slotProps.info.name}}</strong>
+            <span v-else>{{slotProps.info.name}}</span>
+        </template>
+    </dh-layout>
+</div>
+<script src="../vue.js"></script>
+<script>
+    Vue.component('dh-layout', {
+        props:['list'],
+        template:`
+        <div>
+        <li :key="item.id" v-for="item in list">
+            <slot :info="item"></slot>
+        </li>
+        </div>
+        `
+    });
+    let vm = new Vue({
+        el: '#app',
+        data: {
+            list:[{
+                id:1,
+                name:'apple'
+            },{
+                id: 2,
+                name: 'orange'
+            },{
+                id: 3,
+                name: 'banana'
+            }]
+        }
+    });
+</script>
+</body>
+</html>

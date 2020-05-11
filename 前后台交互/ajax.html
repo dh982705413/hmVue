@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="../jquery.js"></script>
+<script>
+    /*
+    * 前后端交互，异步编程与Promise概述
+    * */
+    let ret='---';
+    $.ajax({
+        url:'http://localhost:3000/data',
+        success:function (data) {
+            ret=data;
+        }
+    });
+    console.log(ret)//---
+
+</script>
+</body>
+</html>
