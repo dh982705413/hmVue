@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <router-link to="/login">login</router-link>
+    <router-link to="/user">user</router-link>
+<!--    路由占位符-->
+    <router-view></router-view>
+</div>
+<script src="../vue.js"></script>
+<script src="../vue-router_3.0.2.js"></script>
+<script>
+    const Login={
+        template:'<h1>Login组件</h1>'
+    }
+    const User={
+        template:'<h1>User组件</h1>'
+    }
+    const router=new VueRouter({
+        routes:[
+            {path:'/login',component:Login},
+            {path:'/user',component:User}
+        ]
+    });
+    const vm = new Vue({
+        el: '#app',
+        data: {},
+        // router:router //挂在路由实例对象
+        router
+    });
+
+</script>
+</body>
+</html>
