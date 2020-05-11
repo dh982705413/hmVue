@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+    * fetch基本用法
+    * */
+    fetch('http://localhost:3000/fdata')
+    .then(data=>{
+       // text()方法数据fectchAPI的一部分,它返回一个promise实例对象，用户获取后台数据
+       return  data.text();
+    })
+    .then(data=>{
+        console.log(data);
+    });
+</script>
+</body>
+</html>

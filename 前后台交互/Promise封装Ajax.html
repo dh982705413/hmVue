@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function queryData(url) {
+        return new Promise((reslove, reject) => {
+            let xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState != 4) return;
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    reslove(xhr.responseText);
+                } else {
+                    reject('出错了')
+                }
+            }
+            xhr.open('get', url);
+            xhr.send(null);
+        });
+
+    }
+
+    queryData('http://localhost:3000/data')
+         .then(data => {
+            console.log(data);
+            return queryData('http://localhost:3000/data1');
+         }).then(data => {
+            console.log(data);
+            return queryData('http://localhost:3000/data2')
+         }).then(data => {
+            console.log(data)
+         })
+        .catch(err => console.log(err))
+</script>
+</body>
+</html>
